@@ -98,3 +98,10 @@ replace local `now` and `later` with these lines in your
 
 Now you can go along your merry way, blissfully unaware of my bloat,
 bugs, poor design, and any other harmful things contained herein.
+
+## "'Grats on reinventing the FIFO queue."
+
+I know, I'm pretty much a champion.
+
+Please don't nominate me for the Turing award yet, though; I have hopes
+that I might yet do something *even better*.
