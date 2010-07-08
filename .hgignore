@@ -2,3 +2,6 @@ syntax: glob
 
 **.6
 serve
+tools/now
+tools/later
+tools/serve
