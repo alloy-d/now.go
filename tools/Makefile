@@ -4,7 +4,7 @@ include $(GOROOT)/src/Make.$(GOARCH)
 .go.6:
 	$(GC) $<
 
-alls: server tools
+all: serve tools
 
 tools: now later
 
