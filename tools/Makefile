@@ -14,7 +14,7 @@ now: now.6
 later: later.6
 	6l -o later later.6
 
-server: serve.6
+serve: serve.6
 	6l -o serve serve.6
 
 clean::
