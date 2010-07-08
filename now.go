@@ -90,3 +90,9 @@ func Pop() {
     }
     writeList()
 }
+
+func PushNext(addition string) {
+    readList()
+    theList.PushFront(addition)
+    writeList()
+}
