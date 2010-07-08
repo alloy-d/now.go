@@ -2,11 +2,11 @@ package main
 
 import (
     "fmt"
-    "../next"
+    "../now"
 )
 
 func main() {
-    thing := next.GetNext()
+    thing := now.GetNext()
 
-    fmt.Printf(thing)
+    fmt.Printf("%s\n", thing)
 }

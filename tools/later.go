@@ -3,7 +3,7 @@ package main
 import (
     "flag"
     "os"
-    "../next"
+    "../now"
 )
 
 func main() {
@@ -18,5 +18,5 @@ func main() {
         }
     }
 
-    next.AddThing(thing)
+    now.AddThing(thing)
 }

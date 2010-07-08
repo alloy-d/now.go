@@ -1,11 +1,16 @@
-server: serve.6 next.6
-	6l -o serve serve.6
+include $(GOROOT)/src/Make.$(GOARCH)
+.SUFFIXES: .go .$(O)
 
-serve.6: serve.go next.6
-	6g serve.go
+.go.$(O):
+	$(GC) $<
 
-next.6: next.go
-	6g next.go
+GOFILES=now.go\
+		serve.go\
+		serve-to-humans.go\
+		serve-to-machines.go
+
+lib: $(GOFILES)
+	$(GC) $^
 
 clean::
 	rm -f *.6

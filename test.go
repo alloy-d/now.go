@@ -1,22 +1,22 @@
 package main
 
 import (
-    "./next"
+    "./now"
     "fmt"
+    "json"
 )
 
 func doWrite() {
-    next.AddThing("make now.go better.")
+    now.AddThing("make now.go better.")
 }
 
 func doRead() string {
-    thing := next.GetNext()
+    thing := now.GetNext()
     return thing
 }
 
 func main() {
-    doWrite()
-    thing := doRead()
-
-    fmt.Printf("%v\n", thing);
+    thing := now.Thing{"test now.go"}
+    jsonThing, _ := json.Marshal(thing)
+    fmt.Printf("%s", jsonThing)
 }
