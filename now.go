@@ -77,11 +77,16 @@ func AddThing(addition string) {
 
 func GetNext() string {
     readList()
-    return theList.Front().Value.(string)
+    if front := theList.Front(); front != nil {
+        return theList.Front().Value.(string)
+    }
+    return ""
 }
 
 func Pop() {
     readList()
-    theList.Remove(theList.Front())
+    if front := theList.Front(); front != nil {
+        theList.Remove(front)
+    }
     writeList()
 }
