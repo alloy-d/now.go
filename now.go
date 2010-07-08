@@ -2,6 +2,8 @@ package now
 
 import (
     "bufio"
+    "container/list"
+    "fmt"
     "os"
     "strings"
 )
@@ -10,16 +12,28 @@ type Thing struct {
     Name string
 }
 
+var (
+    theList *list.List = list.New()
+)
+
 const filename = ".next.things"
 
-func openList() (*os.File, bool) {
+func init() { readList() }
+
+func openList(fresh bool) (*os.File, bool) {
     home := os.Getenv("HOME")
     if home == "" {
         return nil, false
     }
 
     filePath := home + "/" + filename
-    file, err := os.Open(filePath, os.O_APPEND|os.O_CREAT|os.O_RDWR, 0600)
+    flags := os.O_CREAT|os.O_RDWR
+    if fresh {
+        flags |= os.O_TRUNC
+    } else {
+        flags |= os.O_APPEND
+    }
+    file, err := os.Open(filePath, flags, 0600)
 
     if err != nil {
         return file, false
@@ -28,29 +42,46 @@ func openList() (*os.File, bool) {
     return file, true
 }
 
-func AddThing(addition string) bool {
-    listFile, ok := openList()
+func readList() {
+    listFile, ok := openList(false)
     defer listFile.Close()
 
-    if !ok { return false }
-
-    _, err := listFile.WriteString(addition + "\n")
-    if err != nil { return false }
-
-    return true
-}
-
-func GetNext() string {
-    listFile, ok := openList()
-    defer listFile.Close()
-
-    if !ok { return "" }
+    if !ok { return }
 
     reader := bufio.NewReader(listFile)
 
+    theList.Init()
     nextThing, err := reader.ReadString('\n')
-    if err != nil { return "" }
-
-    return strings.Split(nextThing, "\n", 0)[0]
+    for ; err == nil; nextThing, err = reader.ReadString('\n') {
+        theList.PushBack(strings.Split(nextThing, "\n", 0)[0])
+    }
 }
 
+func writeList() {
+    listFile, ok := openList(true)
+    defer listFile.Close()
+
+    if !ok { return }
+
+    things := theList.Iter()
+    for thing := range things {
+        listFile.WriteString(fmt.Sprintf("%s\n", thing))
+    }
+}
+
+func AddThing(addition string) {
+    readList()
+    theList.PushBack(addition)
+    writeList()
+}
+
+func GetNext() string {
+    readList()
+    return theList.Front().Value.(string)
+}
+
+func Pop() {
+    readList()
+    theList.Remove(theList.Front())
+    writeList()
+}
