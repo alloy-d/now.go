@@ -1,15 +1,30 @@
 package main
 
 import (
+    "flag"
     "fmt"
     "json"
     "github.com/hoisie/web.go"
     "./next"
 )
 
-func jsonNext() string {
+var (
+    http *string = flag.String("http", ":5939", "HTTP service address")
+)
+
+func htmlNext() string {
+    thing := next.GetNext()
+
+    return fmt.Sprintf(
+            "<!DOCTYPE html>\n<html><head><title>Now.</title></head><body><p>%s</p></body></html>",
+            thing)
+}
+
+
+func jsonNext(ctx *web.Context) string {
     out, _ := json.Marshal(next.GetNext())
 
+    ctx.SetHeader("Content-Type", "application/json", true)
     return fmt.Sprintf("%s", out)
 }
 
@@ -25,8 +40,10 @@ func jsonLater(ctx *web.Context) {
 }
 
 func main() {
-    web.Get("/next", jsonNext)
+    flag.Parse()
+    web.Get("/next.json", jsonNext)
     web.Post("/later/", jsonLater)
-    web.Run("0.0.0.0:5939")
+    web.Get("/next", htmlNext)
+    web.Run(*http)
 }
 
