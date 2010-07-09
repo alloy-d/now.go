@@ -103,5 +103,5 @@ bugs, poor design, and any other harmful things contained herein.
 
 I know, I'm pretty much a champion.
 
-Please don't nominate me for the Turing award yet, though; I have hopes
+Please don't nominate me for the Turing Award now, though; I have hopes
 that I might yet do something *even better*.
