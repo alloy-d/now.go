@@ -1,0 +1,60 @@
+html, body {
+    height: 97%;
+    margin: 0 auto;
+}
+body {
+    background-color: #f5f5f5;
+    display: table;
+}
+div {
+    display: table-cell;
+    min-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+form {
+    position: relative;
+}
+input[type=text] {
+    background-color: #ffffff;
+    border: 1px solid #bbbbbb;
+    border-radius: 6px;
+    color: black;
+    font-family: "Georgia", serif;
+    font-size: 40px;
+    font-weight: normal;
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 8px;
+    position: relative;
+    text-align: left;
+    top: 0
+    left: 0
+    text-shadow: 2px 2px #bbbbbb;
+    z-index: 1;
+}
+input[type=text][disabled] {
+    background-color: #e5e5e5;
+}
+input[type=submit] {
+    background-color: inherit;
+    border: none;
+    color: #bbbbbb;
+    cursor: pointer;
+    display: table-cell;
+    font-size: 16px;
+    font-weight: 100;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: bottom;
+    width: 16px;
+}
+img#busyIndicator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1337;
+}

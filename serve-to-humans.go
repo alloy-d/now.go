@@ -17,3 +17,12 @@ func htmlNext(ctx *web.Context) string {
     return ""
 }
 
+func htmlLater(ctx *web.Context) string {
+    out, err := mustache.RenderFile("human-friendly/later.mustache.html", nil)
+    if err == nil {
+        return out
+    }
+    ctx.StartResponse(404)
+    return ""
+}
+
