@@ -51,8 +51,8 @@ your attention for `now`.  It's (theoretically) that easy.
 
 # No command line required!
 
-(Note: that heading is a lie!  The webpage is still more or less
-useless, since `later` and `now -done` are unaccounted for.)
+(Note: that heading is a lie!  The webpage is still half
+useless, since `later` is unaccounted for.)
 
 GUI type, eh?  Well, then, point your browser to `localhost:5939` for a
 no-nonsense, this-is-what-you-should-be-doing-now interface.
