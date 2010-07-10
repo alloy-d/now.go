@@ -70,9 +70,11 @@ func writeList() {
 }
 
 func AddThing(addition string) {
-    readList()
-    theList.PushBack(addition)
-    writeList()
+    if addition != "" {
+        readList()
+        theList.PushBack(addition)
+        writeList()
+    }
 }
 
 func GetNext() string {
