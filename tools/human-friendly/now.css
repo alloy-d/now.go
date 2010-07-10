@@ -16,11 +16,33 @@ p {
     background-color: #ffffff;
     border: 1px solid #bbbbbb;
     border-radius: 6px;
+    color: black;
     font-family: "Georgia", serif;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: normal;
+    margin: 0 auto;
     max-width: 500px;
     min-width: 300px;
     padding: 8px;
+    position: relative;
+    text-align: left;
+    top: 0
+    left: 0
     text-shadow: 2px 2px #bbbbbb;
+    z-index: 1;
+}
+
+p#theDoneButton {
+    background-color: black;
+    border-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 60px;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    text-align: right;
+    text-shadow: none;
+    z-index: 9001;
 }
