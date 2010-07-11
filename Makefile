@@ -7,7 +7,8 @@ include $(GOROOT)/src/Make.$(GOARCH)
 GOFILES=now.go\
 		serve.go\
 		serve-to-humans.go\
-		serve-to-machines.go
+		serve-to-machines.go\
+		dirty-rotten-hacks.go\
 
 lib: $(GOFILES)
 	$(GC) $^

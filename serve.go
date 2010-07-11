@@ -5,7 +5,7 @@ import (
 )
 
 func Serve(http string) {
-    web.SetStaticDir("human-friendly")
+    web.SetStaticDir(ResourceDir())
     web.Get("/now.json", jsonNext)
     web.Get("/now", htmlNext)
     web.Get("/later/", htmlLater)
