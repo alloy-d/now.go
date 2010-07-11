@@ -1,18 +1,11 @@
 include $(GOROOT)/src/Make.$(GOARCH)
-.SUFFIXES: .go .$(O)
 
-.go.$(O):
-	$(GC) $<
-
+TARG=now
 GOFILES=now.go\
 		serve.go\
 		serve-to-humans.go\
 		serve-to-machines.go\
 		dirty-rotten-hacks.go\
 
-lib: $(GOFILES)
-	$(GC) $^
+include $(GOROOT)/src/Make.pkg
 
-clean::
-	rm -f *.6
-	rm -f serve
