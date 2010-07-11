@@ -2,3 +2,7 @@ syntax: glob
 
 **.6
 _obj/
+tools/later/later
+tools/now/now
+tools/nowserve/nowserve
+
