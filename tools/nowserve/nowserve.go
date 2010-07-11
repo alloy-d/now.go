@@ -2,7 +2,7 @@ package main
 
 import (
     "flag"
-    "../now"
+    "now"
 )
 
 var (
