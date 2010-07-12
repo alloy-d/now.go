@@ -13,6 +13,7 @@ func Serve(http string) {
     web.Post("/done", jsonPop)
     web.Post("/now", jsonPushNext)
     web.Post("/later/", jsonLater)
+    web.Delete("/now", jsonPop)
 
     web.Run(http)
 }
