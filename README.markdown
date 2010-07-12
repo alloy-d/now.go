@@ -26,7 +26,7 @@ works:
 
 ## Start it up.
 
-    $ serve
+    $ nowserve
     2010/07/08 12:34:17 web.go serving :5939
 
 ## When you have something you need to do later, tell it.
