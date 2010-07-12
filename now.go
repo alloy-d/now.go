@@ -53,7 +53,7 @@ func readList() {
     theList.Init()
     nextThing, err := reader.ReadString('\n')
     for ; err == nil; nextThing, err = reader.ReadString('\n') {
-        theList.PushBack(strings.Split(nextThing, "\n", 0)[0])
+        theList.PushBack(strings.Split(nextThing, "\n", -1)[0])
     }
 }
 
