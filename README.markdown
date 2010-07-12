@@ -140,3 +140,9 @@ I know, I'm pretty much a champion.
 
 Please don't nominate me for the Turing Award now, though; I have hopes
 that I might yet do something *even better*.
+
+## "Installation sucks."
+
+I agree.  `goinstall` is an experiment in *package* installation,
+though, and doesn't seem to consider packages that come with commands.
+No good solution is immediately obvious to me.
