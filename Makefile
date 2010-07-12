@@ -1,6 +1,6 @@
 include $(GOROOT)/src/Make.$(GOARCH)
 
-TARG=now
+TARG=alloy-d/now
 GOFILES=now.go\
 		serve.go\
 		serve-to-humans.go\

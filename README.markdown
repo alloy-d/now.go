@@ -103,7 +103,7 @@ tools themselves installed, there are a few more steps:
 This will install `now`, `later`, and `servenow` to your `$GOBIN`,
 which should already be in your `$PATH`.
 
-## A special note on installation
+## Special notes on installation
 
 The given method will leave the source tree intact in
 `$GOROOT/src/pkg/github.com/alloy-d/now.go`.  If you don't use
@@ -111,6 +111,10 @@ The given method will leave the source tree intact in
 you build the library.  At the moment, it uses an ugly hack to find the
 static files needed for the HTML interface (see
 [`dirty-rotten-hacks.go`](now.go/blob/master/dirty-rotten-hacks.go)).
+
+Another thing to note if not using `goinstall`:  the import in
+[`tools/nowserve/nowserve.go`](now.go/blob/master/tools/nowserve/nowserve.go)
+should be changed from `github.com/alloy-d/now.go` to `alloy-d/now`.
 
 # Miscellaneous topics
 
