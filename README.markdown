@@ -10,9 +10,9 @@ stress and demotivate you while sending your brain off thinking about a
 
 ## "Hey, me too!"
 
-One suggestion is to paginate your to-do list--break off, say, ten
-things, and just look at that sub-list until it's done.  Now you have a
-smaller to-do list.  Hoorah.
+Maybe you've heard the suggestion that you paginate your to-do
+list--break off, say, ten things, and just look at that sub-list until
+it's done.  Now you have a smaller to-do list.  Hoorah.
 
 Here's a better idea: divide your to-do list into two categories.  One,
 all the thing (yes, thing) you should be working on now.  Two, all the
