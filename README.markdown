@@ -82,6 +82,36 @@ your heart's content.  It's just plain text, one thing to a line.
 Whatever changes you make will be accomodated by `now.go` (just be sure
 to leave it alone while you're doing your manual editing).
 
+# "Okay, I want it!"
+
+Great!
+
+First, you'll need an installation of the [Go](http://golang.org)
+language.  If you don't have one already, it's easy enough to [get
+one](http://golang.org/doc/install.html).
+
+Once you've got Go up and running, you can `goinstall` now.go:
+
+    $ goinstall github.com/alloy-d/now.go
+
+...but this just gives you the library that the tools use.  To get the
+tools themselves installed, there are a few more steps:
+
+    $ cd $GOROOT/src/pkg/github.com/alloy-d/now.go/tools/
+    $ for i in *; do (cd $i; make install); done
+
+This will install `now`, `later`, and `servenow` to your `$GOBIN`,
+which should already be in your `$PATH`.
+
+## A special note on installation
+
+The given method will leave the source tree intact in
+`$GOROOT/src/pkg/github.com/alloy-d/now.go`.  If you don't use
+`goinstall`, you will want to make sure to keep the source around after
+you build the library.  At the moment, it uses an ugly hack to find the
+static files needed for the HTML interface (see
+[`dirty-rotten-hacks.go`](dirty-rotten-hacks.go)).
+
 # Miscellaneous topics
 
 ## "What is this HTTP nonsense?  How brain-dead are you?"
