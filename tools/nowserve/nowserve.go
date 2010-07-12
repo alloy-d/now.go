@@ -2,7 +2,7 @@ package main
 
 import (
     "flag"
-    "now"
+    "github.com/alloy-d/now.go"
 )
 
 var (
