@@ -96,6 +96,11 @@ replace local `now` and `later` with these lines in your
         echo "$@" >> ~/.next.things
     }
 
+    nowdone() {
+        things=$(wc -l ~/.next.things)
+        tail -n $(($things-1)) ~/.next.things > ~/.next.things
+    }
+
 Now you can go along your merry way, blissfully unaware of my bloat,
 bugs, poor design, and any other harmful things contained herein.
 
