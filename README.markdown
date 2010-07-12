@@ -110,7 +110,7 @@ The given method will leave the source tree intact in
 `goinstall`, you will want to make sure to keep the source around after
 you build the library.  At the moment, it uses an ugly hack to find the
 static files needed for the HTML interface (see
-[`dirty-rotten-hacks.go`](dirty-rotten-hacks.go)).
+[`dirty-rotten-hacks.go`](now.go/blob/master/dirty-rotten-hacks.go)).
 
 # Miscellaneous topics
 
