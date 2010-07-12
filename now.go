@@ -8,10 +8,6 @@ import (
     "strings"
 )
 
-type Thing struct {
-    Name string
-}
-
 var (
     theList *list.List = list.New()
 )
