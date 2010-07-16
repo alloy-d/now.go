@@ -8,7 +8,6 @@ import (
     "json"
     "os"
     "strings"
-    //"../now"
 )
 
 var (
