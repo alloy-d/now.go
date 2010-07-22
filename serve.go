@@ -14,6 +14,7 @@ func Serve(http string) {
     web.Post("/now", jsonPushNext)
     web.Post("/later/", jsonLater)
     web.Delete("/now", jsonPop)
+    web.Get("/", func (c *web.Context) { c.Redirect(301, "/now") })
 
     web.Run(http)
 }
