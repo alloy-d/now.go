@@ -39,3 +39,4 @@ func main() {
 
     addThing(thing)
 }
+
