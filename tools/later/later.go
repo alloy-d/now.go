@@ -19,6 +19,7 @@ func addThing(thing string) {
 }
 
 func main() {
+    flag.Parse()
     if flag.NArg() == 0 { os.Exit(1) }
 
     thing := ""
