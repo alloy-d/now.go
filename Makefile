@@ -1,6 +1,6 @@
 include $(GOROOT)/src/Make.inc
 
-TARG=alloy-d/now
+TARG=github.com/alloy-d/now.go
 GOFILES=now.go\
 		serve.go\
 		serve-to-humans.go\
