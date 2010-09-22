@@ -36,7 +36,10 @@ func getNext() string {
     var out interface{}
     json.Unmarshal(buf.Bytes(), &out)
 
-    return out.(string)
+    if out != nil {
+        return out.(string)
+    }
+    return ""
 }
 
 func main() {
@@ -48,5 +51,7 @@ func main() {
 
     thing := getNext()
 
-    fmt.Println(thing)
+    if thing != "" {
+        fmt.Println(thing)
+    }
 }
