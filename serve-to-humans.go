@@ -6,14 +6,15 @@ import (
     "path"
 )
 
+// TODO: return the proper response code if something goes wrong with a
+// template.
+
 func htmlNext(ctx *web.Context) string {
     if thing := GetNext(); thing != "" {
         template := path.Join(ResourceDir(), "now.mustache.html")
-        out, err := mustache.RenderFile(template,
+        out := mustache.RenderFile(template,
                 map[string]string {"thing":thing})
-        if err == nil {
-            return out
-        }
+        return out
     }
     ctx.StartResponse(404)
     return ""
@@ -21,11 +22,7 @@ func htmlNext(ctx *web.Context) string {
 
 func htmlLater(ctx *web.Context) string {
     template := path.Join(ResourceDir(), "later.mustache.html")
-    out, err := mustache.RenderFile(template, nil)
-    if err == nil {
-        return out
-    }
-    ctx.StartResponse(404)
-    return ""
+    out := mustache.RenderFile(template, nil)
+    return out
 }
 
